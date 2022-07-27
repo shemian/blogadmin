@@ -25,6 +25,11 @@ class CategoriesController extends Controller
         $category->slug = $data['slug'];
         $category->description = $data['description'];
 
-        
+        if($data->hasfile('image')){
+            $file = $data->file('image');
+            $filename = time(). '.' . $file->getClientOriginalExtension();
+            $file->move('upload/category/', $filename);
+            $category->image = $filename;
+        }
     }
 }
