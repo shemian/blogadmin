@@ -31,5 +31,13 @@ class CategoriesController extends Controller
             $file->move('upload/category/', $filename);
             $category->image = $filename;
         }
+
+        $category->meta_title = $data['meta_title'];
+        $category->meta_description = $data['meta_description'];
+        $category->meta_keyword = $data['meta_keyword'];
+
+        $category->navbar_status = $data['navbar_status'];
+        $category->status = $data['status'];
+        $category->created_by = Auth::user()->id;
     }
 }
