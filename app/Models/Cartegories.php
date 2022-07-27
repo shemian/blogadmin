@@ -23,4 +23,5 @@ class Cartegories extends Model
         'status',
         'created_by',
     ];
+    
 }
