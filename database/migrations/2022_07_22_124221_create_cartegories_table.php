@@ -17,7 +17,7 @@ class CreateCartegoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->text('desription');
+            $table->text('description');
             $table->string('image');
             $table->string('meta_title');
             $table->text('meta_description');

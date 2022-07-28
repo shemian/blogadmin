@@ -39,7 +39,7 @@ class CategoryFormRequest extends FormRequest
             ],
             'image'=>[
                 'required',
-                'image',
+                'mimes:jpeg,jpg,png',
             ],
             'meta_title'=>[
                 'required',
@@ -48,20 +48,18 @@ class CategoryFormRequest extends FormRequest
             ],
             'meta_description'=>[
                 'required',
-                'string',
-            
+                'string',  
             ],
             'meta_keyword'=>[
                 'required',
                 'string',
-            
             ],
             'navbar_status'=>[
-                'required',
+                'nullable',
                 'boolean',
             ],
             'status'=>[
-                'required',
+                'nullable',
                 'boolean',
             ],
         ];

@@ -28,6 +28,6 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/category', [CategoriesController::class, 'index'])->name('category');
     Route::get('/addcategory', [CategoriesController::class, 'create'])->name('add-category');
-    Route::get('/addcategory', [CategoriesController::class, 'store'])->name('add-category');
+    Route::post('/addcategory', [CategoriesController::class, 'store'])->name('add-category');
 
 });
