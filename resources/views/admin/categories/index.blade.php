@@ -23,6 +23,34 @@
             <div class = "alert alert-success">{{session('message')}}</div>
             @endif
 
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Image </th>
+                        <th scope="col">Status </th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($category as $item)
+                    <tr>
+                     
+                        <th scope="row">{{$item->id}}</th>
+                        <td>{{$item->name}}</td>
+                        <td>
+                            <img src="{{asset('upload/categories/'.$item->image ) }}" height="50px" width="50px" alt="">
+                        </td>
+                        <td>{{$item->status == '1' ? 'Hidden':'shown'}}</td>
+                        <td><a href="#" class="btn btn-success my-2 my-sm-0">Edit</a></td>
+                      
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
             </div>
         </div>
     </div>
