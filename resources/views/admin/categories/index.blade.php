@@ -27,7 +27,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Category Name</th>
                         <th scope="col">Image </th>
                         <th scope="col">Status </th>
@@ -38,13 +38,15 @@
                     @foreach($category as $item)
                     <tr>
                      
-                        <th scope="row">{{$item->id}}</th>
+                        <th>{{$item->id}}</th>
                         <td>{{$item->name}}</td>
                         <td>
                             <img src="{{asset('upload/categories/'.$item->image ) }}" height="50px" width="50px" alt="">
                         </td>
                         <td>{{$item->status == '1' ? 'Hidden':'shown'}}</td>
-                        <td><a href="#" class="btn btn-success my-2 my-sm-0">Edit</a></td>
+                        <td>
+                            <a href="{{ url('edit/'.$item->id )}}" class="btn btn-success my-2 my-sm-0">Edit</a>
+                        </td>
                       
                     </tr>
                     @endforeach
