@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryFormRequest;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cartegories;
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -17,6 +19,7 @@ class CategoriesController extends Controller
         $category = Cartegories::all();
         return view('admin.categories.index', compact('category'));
     }
+   
 
     public function create(){
         return view('admin.categories.create');
@@ -50,4 +53,10 @@ class CategoriesController extends Controller
 
         return redirect('admin/category')->with('message', 'Category Added Sucessfully');
     }
+
+    public function edit($id){
+        Log::info($id);
+    }
+    
+   
 }
